@@ -38,6 +38,7 @@ def Check_Palindrome(cknum):                    # Palindrome 확인 함수
                     return False
         i+=1
     return True
+
 def Change_num(chnum):                          # 숫자 뒤집기
     revnum = list(chnum)
     revnum.reverse()
