@@ -22,12 +22,12 @@ class Stack:
     def clear(self):
         self.top = []
 
+if __name__ == '__main__':
+    odd = Stack()
+    even = Stack()
+    for i in range(10):
+        if i % 2 == 0 : even.Push(i)
+        else : odd.Push(i)
 
-odd = Stack()
-even = Stack()
-for i in range(10):
-    if i % 2 == 0 : even.Push(i)
-    else : odd.Push(i)
-
-print(' 스택 even push 5회', even.top)
-print(' 스택 odd push 5회',odd.top)
+    print(' 스택 even push 5회', even.top)
+    print(' 스택 odd push 5회',odd.top)
