@@ -1,5 +1,5 @@
 import StackByListUsingClass as sc
-import PostfixByStack as ps
+import Postfix_By_Stack as ps
 
 infix1 = ['8', '/', '2', '-', '3', '+', '(', '3', '*', '2', ')']
 
