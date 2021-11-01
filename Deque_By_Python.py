@@ -1,6 +1,6 @@
-import CircleQueueByPython      ### 모듈
+import CircleQueue_By_Python      ### 모듈
 
-class Circle_Deque (CircleQueueByPython.Circle_Queue):
+class Circle_Deque (CircleQueue_By_Python.Circle_Queue):
     def __init__(self):
         super().__init__()
 
@@ -11,7 +11,7 @@ class Circle_Deque (CircleQueueByPython.Circle_Queue):
             self.CQueue[self.front] = e
             self.front-=1
             if self.front < 0:
-                self.front += CircleQueueByPython.MAX_QSIZE
+                self.front += CircleQueue_By_Python.MAX_QSIZE
 
     def getFront(self):
         return self.Peek()
@@ -30,7 +30,7 @@ class Circle_Deque (CircleQueueByPython.Circle_Queue):
         if not self.isEmpty():
             self.rear -= 1
             if self.rear < 0:
-                self.rear += CircleQueueByPython.MAX_QSIZE
+                self.rear += CircleQueue_By_Python.MAX_QSIZE
             return self.CQueue[self.rear]
 
 dq = Circle_Deque()
