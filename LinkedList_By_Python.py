@@ -75,6 +75,16 @@ class LinkedList:
         elif before.link != None:
             before.link = before.link.link
 
+    def ReverseDisplay(self, Node):
+        node = Node
+        if node != None:
+            if node.link != None:
+                self.ReverseDisplay(node.link)
+                print(node.data, end = '->')
+            else:
+                print(node.data, end = '->')
+                return
+
 s = LinkedList()
 s.Display("단순연결리스트로 구현한 리스트(초기상태):")
 s.Insert(0, 10);    s.Insert(0, 20);    s.Insert(1, 30);
@@ -82,8 +92,8 @@ s.Insert(s.Size(), 40);     s.Insert(2, 50);
 s.Display("단순연결리스트로 구현한 리스트 (삽입X5)")
 s.Replace(2, 90)
 s.Display("단순연결리스트로 구현한 리스트 (교체X1)")
-s.Delete(2);    s.Delete(s.Size()-1);   s.Delete(0);
-s.Display("단순연결리스트로 구현한 리스트 (삭제X3)")
-s.Clear()
-s.Display("단순연결리스트로 구현한 리스트 (정리 후)")
-
+# s.Delete(2);    s.Delete(s.Size()-1);   s.Delete(0);
+# s.Display("단순연결리스트로 구현한 리스트 (삭제X3)")
+# s.Clear()
+# s.Display("단순연결리스트로 구현한 리스트 (정리 후)")
+s.ReverseDisplay(s.head)
