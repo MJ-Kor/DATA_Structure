@@ -6,7 +6,7 @@ class Node:
 class LinkedStack:
     def __init__(self):
         self.top = None
-
+        self.count = 0
     def Clear(self):
         self.top = None
 
@@ -16,24 +16,25 @@ class LinkedStack:
     def Push(self, e):
         n = Node(e, self.top)
         self.top = n
+        self.count += 1
 
     def Pop(self):
         if not self.isEmpty():
             n = self.top
             self.top = n.link
-        return n.data               # 자연스럽게 메모리 반환
+            self.count -= 1
+            return n.data               # 자연스럽게 메모리 반환
 
     def Peek(self):
         return self.top.data
 
     def Size(self):
-        count = 0
-        n = self.top
-        while n != None:
-            count+=1
-            n = n.link
-
-        return count
+        # count = 0
+        # n = self.top
+        # while n != None:
+        #     count+=1
+        #     n = n.link
+        return self.count
 
     def Display(self, msg = 'Linked Stack:'):
         print(msg, end = ' ')
@@ -52,6 +53,8 @@ for i in range(10):
 
 odd.Display()
 even.Display()
+
+print(odd.Size())
 
 
 
