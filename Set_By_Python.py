@@ -1,6 +1,7 @@
 class Set:
     def __init__(self):
         self.items=[]
+
     def Size(self):
         return len(self.items)
 
@@ -15,7 +16,14 @@ class Set:
         if e in self.items:
             self.items.remove(e)
 
-    # def Equals(self, setb):
+    def Equals(self, setB):
+        if len(self.items) != len(setB.items):
+            return False
+        else:
+            for i in range(len(self.items)):
+                if self.items[i] != setB.items[i]:
+                    return False
+            return True
 
     def Union(self, setB):
         setC = Set()
@@ -43,3 +51,15 @@ class Set:
     def Display(self, msg):
         print(msg,self.items)
 
+    def CheckProperSubset(self, SetB):
+        if self.Equals(self.Intersect(SetB)):
+            return False
+        else:
+            return True
+
+
+sa = Set()
+sa.Insert(1); sa.Insert(2); sa.Insert(3);
+sb = Set()
+sb.Insert(1); sb.Insert(2); sb.Insert(3); sb.Insert(4);
+print(sa.CheckProperSubset(sb))
