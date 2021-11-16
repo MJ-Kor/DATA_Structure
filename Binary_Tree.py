@@ -58,27 +58,29 @@ def Calc_height(n):
     else:
         return hright + 1
 
-d = TNode('D', None, None)
-e = TNode('E', None, None)
-b = TNode('B', d, e)
-f = TNode('F', None, None)
-c = TNode('C', f, None)
-root = TNode('A', b, c)
 
-print('\n In-Order : ', end = '')
-In_order(root)
+if __name__ == '__main__':
+    d = TNode('D', None, None)
+    e = TNode('E', None, None)
+    b = TNode('B', d, e)
+    f = TNode('F', None, None)
+    c = TNode('C', f, None)
+    root = TNode('A', b, c)
 
-print('\n Pre-Order : ', end = '')
-Pre_order(root)
+    print('\n In-Order : ', end = '')
+    In_order(root)
 
-print('\n Post-Order : ', end = '')
-Post_order(root)
+    print('\n Pre-Order : ', end = '')
+    Pre_order(root)
 
-print('\n Level-Order : ', end = '')
-Level_order(root)
+    print('\n Post-Order : ', end = '')
+    Post_order(root)
 
-print()
+    print('\n Level-Order : ', end = '')
+    Level_order(root)
 
-print("노드의 개수 = %d개" % Count_node(root))
-print("단말의 개수 = %d개" % Count_leaf(root))
-print("트리의 높이 = %d" % Calc_height(root))
+    print()
+
+    print("노드의 개수 = %d개" % Count_node(root))
+    print("단말의 개수 = %d개" % Count_leaf(root))
+    print("트리의 높이 = %d" % Calc_height(root))
