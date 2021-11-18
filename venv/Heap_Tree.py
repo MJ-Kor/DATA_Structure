@@ -47,6 +47,21 @@ class MaxHeap:
             self.heap.pop(-1)
             return hroot
 
+def isMaxHeapRecur(A, id):
+    if len(A)-1 < id:
+        return 'True'
+
+    Hleft = isMaxHeapRecur(A, id * 2)
+    Hright = isMaxHeapRecur(A, id * 2 + 1)
+
+    if Hleft == 'True' and Hright == 'True':
+        if A[id] <= A[id // 2] or id == 1:
+            return 'True'
+        else:
+            return 'False'
+    else:
+        return 'False'
+
 heap = MaxHeap()
 data = [2, 5, 4, 8, 9, 3, 7, 3]
 print("[삽입 연산] : ", data)
@@ -57,3 +72,7 @@ heap.Delete()
 heap.Display('[ 삭제 후 ] : ')
 heap.Delete()
 heap.Display('[ 삭제 후 ] : ')
+
+test = [0, 9, 8, 7, 3, 5, 3, 4, 2]
+print(test)
+print("최대 힙 :",isMaxHeapRecur(test, 1))
