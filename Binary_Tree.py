@@ -37,7 +37,7 @@ def Level_order(root):
     while not queue.isEmpty():
         n = queue.deQueue()
         if n is not None:
-            print(n.data, end = '')
+            print(n.key, end = ' ')      # AVL 트리 때문에 key로 바꿔놓음 단독으로 쓸때는 data로 바꿀것
             queue.enQueue(n.left)
             queue.enQueue(n.right)
 
@@ -139,3 +139,4 @@ if __name__ == '__main__':
     print("C 노드의 레벨 : %d" % level(root, 'C'))
     print("균형 트리 :", Is_balanced(root)[1])
     print("전체 경로의 길이 : %d" % path_length(root))
+
