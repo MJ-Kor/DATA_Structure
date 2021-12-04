@@ -12,11 +12,11 @@ def DFS(x, y, num):
     if x > -1 and x < n and y > -1 and y < n and my_graph[x][y] == num:     # 해당 위치가 배열을 벗어나는지, 인접배열과 숫자가 일치하는지
         width += 1
         my_graph[x][y] = 0
-        for i in move:  # 상하좌우 이동
+        for i in move:      # 상하좌우 이동
             x += i[0]
             y += i[1]
             DFS(x, y, num)
-            x -= i[0]
+            x -= i[0]       # 원위치
             y -= i[1]
 
 ########
@@ -43,7 +43,7 @@ for i in range(n):
                 result[num] = [1, 0]    # num 값 존재하지 않으면 num으로 새로운 키 생성 [영역 개수, 넓이]
                 DFS(i, j, num)
 
-            if result[num][1] < width:  # 깊이우선탐색 num의 영역 넓이가 기존의 넓이보다 크면
+            if result[num][1] < width:  # DFS num의 영역 넓이가 기존의 넓이보다 크면
                 result[num][1] = width
 
         width = 0
