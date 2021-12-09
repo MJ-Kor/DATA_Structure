@@ -14,7 +14,7 @@ mygraph = {'A':{'B','C'},
 def DFS(graph, start, visited = set()):
     if start not in visited:
         visited.add(start)
-        print(start, end='')
+        print(start, end=' ')
         nbr = graph[start] - visited        # 집합 자료형의 차집합 '-'
         for v in nbr:
             DFS(graph, v, visited)
@@ -24,7 +24,7 @@ def BFS(graph, start):
     queue = cols.deque([start])
     while queue:                            # 공백이 아닐 때 까지
         vertex = queue.popleft()
-        print(vertex, end = '')
+        print(vertex, end = ' ')
         nbr = graph[vertex] - visited
         for v in nbr:
             visited.add(v)
@@ -97,3 +97,6 @@ graphAM = [[0,0,1,1,0,0],
 print('topological_sort: ')
 Topological_sort_AM(vertex, graphAM)
 print()
+DFS(mygraph,'A')
+print()
+BFS(mygraph,'A')
