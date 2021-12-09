@@ -38,7 +38,7 @@ def Kruskal_DST(vertex, adj):
     eList.sort(key = lambda e : e[2], reverse = True)
 
     edgeAccepted = 0
-    while(edgeAccepted < vsize - 1):
+    while(edgeAccepted < vsize - 1 ):
         e = eList.pop(-1)
         uset = find(e[0])
         vset = find(e[1])
